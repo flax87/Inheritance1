@@ -1,35 +1,65 @@
+/*
+ * Inheritance1
+ *
+ * Oleksii Shevchenko KNUTE m1
+ */
+
+/*
+ * Floor / Підлога
+ *
+ * 07.06.20
+ *
+ * Copyright Oleksii Shevchenko KNUTE gr 1m
+ *
+ * Module 2 task 2
+ *
+ *
+                1. Create a child  from the class Rectangle.
+                2. Create another class as a super class for your one.  Or create a daughterly class for your one.
+ */
+
 package com.company;
 
-public class Floor {
+public class Floor extends Rectangle {
 
-    private boolean laminat;
-    private boolean lenoleum;
-    private boolean parket;
-    private boolean insulatedFloor;
-    private char dollar = '$';
-    private double priceLaminatPerMeter2 = 120.15;
-    private double priceLenoleumPerMeter2 = 100.24;
-    private double priceParketPerMeter2 = 230.73;
-    private double priceInsulatedFloorPerMeter2 = 500.00;
+    private boolean laminat = true;                                     //
+    private boolean lenoleum = true;
+    private boolean parket = true;
+    private double priceLaminatPerMeter2;
+    private double priceLenoleumPerMeter2;
+    private double priceParketPerMeter2;
 
-//Create Constructor
+
+    //empty constructor
+    public Floor() {
+        super(0, 0);
+
+    }
+
+
+    //Create Constructor
     public Floor(boolean laminat, boolean lenoleum, boolean parket,
-                 boolean insulatedFloor, char dollar, double priceLaminatPerMeter2,
+                 boolean insulatedFloor, double priceLaminatPerMeter2,
                  double priceLenoleumPerMeter2, double priceParketPerMeter2,
                  double priceInsulatedFloorPerMeter2) {
+
+
+        //Super
+        super(4, 5);
+
 
         this.laminat = laminat;
         this.lenoleum = lenoleum;
         this.parket = parket;
-        this.insulatedFloor = insulatedFloor;
-        this.dollar = dollar;
+
+
         this.priceLaminatPerMeter2 = priceLaminatPerMeter2;
         this.priceLenoleumPerMeter2 = priceLenoleumPerMeter2;
         this.priceParketPerMeter2 = priceParketPerMeter2;
-        this.priceInsulatedFloorPerMeter2 = priceInsulatedFloorPerMeter2;
+
     }
 
-    public boolean isLaminat() {                                            //Laminat
+    public boolean isLaminat() {
         return laminat;
 
     }
@@ -38,21 +68,18 @@ public class Floor {
         this.laminat = laminat;
 
 
-
-
     }
     // ______________________________________________________________________________________________________
 
     public boolean isLenoleum() {                                           //Lenoleum
-        return lenoleum;
-        if(this.)
+        return true;
     }
 
     public void setLenoleum(boolean lenoleum) {
         this.lenoleum = lenoleum;
     }
 
-    //________________________________________________________________________________________________________
+
     public boolean isParket() {                                             //Parket
         return parket;
     }
@@ -60,23 +87,8 @@ public class Floor {
     public void setParket(boolean parket) {
         this.parket = parket;
     }
-    //_________________________________________________________________________________________________________
-    public boolean isInsulatedFloor() {                                     //InsulatedFloor (обогрев пола)
-        return insulatedFloor;
-    }
 
-    public void setInsulatedFloor(boolean insulatedFloor) {
-        this.insulatedFloor = insulatedFloor;
-    }
-    //_________________________________________________________________________________________________________
-    public char getDollar() {                                               //Simbol $
-        return dollar;
-    }
 
-    public void setDollar(char dollar) {
-        this.dollar = dollar;
-    }
-    //__________________________________________________________________________________________________________
     public double getPriceLaminatPerMeter2() {                               //Price Laminat Per Meter2
         return priceLaminatPerMeter2;
     }
@@ -84,7 +96,7 @@ public class Floor {
     public void setPriceLaminatPerMeter2(double priceLaminatPerMeter2) {
         this.priceLaminatPerMeter2 = priceLaminatPerMeter2;
     }
-    //__________________________________________________________________________________________________________
+
     public double getPriceLenoleumPerMeter2() {                              //Price Lenoleum Per Meter2
         return priceLenoleumPerMeter2;
     }
@@ -92,7 +104,8 @@ public class Floor {
     public void setPriceLenoleumPerMeter2(double priceLenoleumPerMeter2) {
         this.priceLenoleumPerMeter2 = priceLenoleumPerMeter2;
     }
-    //___________________________________________________________________________________________________________
+
+
     public double getPriceParketPerMeter2() {                               //Price Parket Per Meter2
         return priceParketPerMeter2;
     }
@@ -100,14 +113,54 @@ public class Floor {
     public void setPriceParketPerMeter2(double priceParketPerMeter2) {
         this.priceParketPerMeter2 = priceParketPerMeter2;
     }
-    //______________________________________________________________________________________________________________
-    public double getPriceInsulatedFloorPerMeter2() {                          //Price Insulated Floor Per Meter2
-        return priceInsulatedFloorPerMeter2;
+
+
+
+    //----------------------------------------------------------------------------------------------------------------
+    //Методи, що рахують суму товару за метр квадратний
+    double True4 = 0;
+
+    public double priceForLaminat(double area, double priceLaminatPerMeter2) {
+        double True1 = 0;
+        if (laminat == true ) {                                  //True1,2,3,4 - йдуть як результат
+            True1 = area * priceLaminatPerMeter2 + this.True4;
+
+        } else System.out.println("Ламінат не замовлено");
+        return True1;
     }
 
-    public void setPriceInsulatedFloorPerMeter2(double priceInsulatedFloorPerMeter2) {
-        this.priceInsulatedFloorPerMeter2 = priceInsulatedFloorPerMeter2;
+    public double priceForLenoleum(double area, double priceLenoleumPerMeter2) {
+        double True2 = 0;
+        if (lenoleum == true) {
+            True2 = area * priceLenoleumPerMeter2 + this.True4;
+
+        } else System.out.println("Лінолеум не замовлено");
+        return True2;
+    }
+
+    public double priceForParket(double area, double priceParketPerMeter2) {
+        double True3 = 0;
+        if (parket == true) {
+            True3 = area * priceParketPerMeter2 + this.True4;
+
+        } else System.out.println("Паркет не замовлено");
+        return True3;
     }
 
 
+//----------------------------------------------------------------------------------------------------------------
+    //toString
+
+
+    @Override
+    public String toString() {
+        return "Floor{ " +
+                "Ламінат = " + this.laminat +
+                ", Лінолеум = " + lenoleum +
+                ", Паркет = " + parket +
+                ", Ціна ламінату на м.кв = " + priceLaminatPerMeter2 +
+                ", Ціна лінолеуму на м.кв  = " + priceLenoleumPerMeter2 +
+                ", Ціна паркету на м.кв = " + priceParketPerMeter2 +
+                '}';
+    }
 }

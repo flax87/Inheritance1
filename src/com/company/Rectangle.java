@@ -5,7 +5,7 @@ public class Rectangle {
 
     private int lenght;
     private int height;
-    private int area;
+    protected double area = lenght * height;
 
 
 // Create Constructor
@@ -35,7 +35,7 @@ public class Rectangle {
         this.height = height;
     }
 
-    public int getArea() {
+    public double getArea() {
         return area;
     }
 
