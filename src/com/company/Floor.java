@@ -24,9 +24,9 @@ import java.util.Objects;
 
 public class Floor extends Rectangle {
 
-    private boolean laminat = true;                                     //
-    private boolean lenoleum = true;
-    private boolean parket = true;
+    private boolean islaminat = true;                                     //
+    private boolean islenoleum = true;
+    private boolean isparket = true;
     private double priceLaminatPerMeter2;
     private double priceLenoleumPerMeter2;
     private double priceParketPerMeter2;
@@ -51,9 +51,9 @@ public class Floor extends Rectangle {
         super(4, 5);
 
 
-        this.laminat = laminat;
-        this.lenoleum = lenoleum;
-        this.parket = parket;
+        this.islaminat = laminat;
+        this.islenoleum = lenoleum;
+        this.isparket = parket;
 
 
         this.priceLaminatPerMeter2 = priceLaminatPerMeter2;
@@ -63,12 +63,12 @@ public class Floor extends Rectangle {
     }
 
     public boolean isLaminat() {
-        return laminat;
+        return islaminat;
 
     }
 
     public void setLaminat(boolean laminat) {
-        this.laminat = laminat;
+        this.islaminat = laminat;
 
 
     }
@@ -79,16 +79,16 @@ public class Floor extends Rectangle {
     }
 
     public void setLenoleum(boolean lenoleum) {
-        this.lenoleum = lenoleum;
+        this.islenoleum = lenoleum;
     }
 
 
     public boolean isParket() {                                             //Parket
-        return parket;
+        return isparket;
     }
 
     public void setParket(boolean parket) {
-        this.parket = parket;
+        this.isparket = parket;
     }
 
 
@@ -125,7 +125,7 @@ public class Floor extends Rectangle {
 
     public double priceForLaminat(double area, double priceLaminatPerMeter2) {
         double True1 = 0;
-        if (laminat == true ) {                                  //True1,2,3,4 - йдуть як результат
+        if (islaminat == true ) {                                  //True1,2,3,4 - йдуть як результат
             True1 = area * priceLaminatPerMeter2 + this.True4;
 
         } else System.out.println("Ламінат не замовлено");
@@ -134,7 +134,7 @@ public class Floor extends Rectangle {
 
     public double priceForLenoleum(double area, double priceLenoleumPerMeter2) {
         double True2 = 0;
-        if (lenoleum == true) {
+        if (islenoleum == true) {
             True2 = area * priceLenoleumPerMeter2 + this.True4;
 
         } else System.out.println("Лінолеум не замовлено");
@@ -143,7 +143,7 @@ public class Floor extends Rectangle {
 
     public double priceForParket(double area, double priceParketPerMeter2) {
         double True3 = 0;
-        if (parket == true) {
+        if (isparket == true) {
             True3 = area * priceParketPerMeter2 + this.True4;
 
         } else System.out.println("Паркет не замовлено");
@@ -158,9 +158,9 @@ public class Floor extends Rectangle {
     @Override
     public String toString() {
         return "Floor{ " +
-                "Ламінат = " + this.laminat +
-                ", Лінолеум = " + lenoleum +
-                ", Паркет = " + parket +
+                "Ламінат = " + this.islaminat +
+                ", Лінолеум = " + islenoleum +
+                ", Паркет = " + isparket +
                 ", Ціна ламінату на м.кв = " + priceLaminatPerMeter2 +
                 ", Ціна лінолеуму на м.кв  = " + priceLenoleumPerMeter2 +
                 ", Ціна паркету на м.кв = " + priceParketPerMeter2 +
