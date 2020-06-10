@@ -45,6 +45,7 @@ public class Floor extends Rectangle {
 
 
         //Super
+
         super(4, 5);
 
 
