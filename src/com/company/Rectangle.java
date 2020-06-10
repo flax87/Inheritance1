@@ -1,4 +1,26 @@
+/*
+ * Inheritance1
+ *
+ * Oleksii Shevchenko KNUTE m1
+ */
+
+/*
+ * Floor / Підлога
+ *
+ * 07.06.20
+ *
+ * Copyright Oleksii Shevchenko KNUTE gr 1m
+ *
+ * Module 2 task 2
+ *
+ *
+                1. Create a child  from the class Rectangle.
+                2. Create another class as a super class for your one.  Or create a daughterly class for your one.
+ */
+
 package com.company;
+
+import java.util.Objects;
 
 public class Rectangle {
 
@@ -41,5 +63,21 @@ public class Rectangle {
 
     public void setArea(int area) {
         this.area = area;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rectangle rectangle = (Rectangle) o;
+        return getLenght() == rectangle.getLenght() &&
+                getHeight() == rectangle.getHeight() &&
+                Double.compare(rectangle.getArea(), getArea()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getLenght(), getHeight(), getArea());
     }
 }

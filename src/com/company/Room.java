@@ -1,4 +1,26 @@
+/*
+ * Inheritance1
+ *
+ * Oleksii Shevchenko KNUTE m1
+ */
+
+/*
+ * Floor / Підлога
+ *
+ * 07.06.20
+ *
+ * Copyright Oleksii Shevchenko KNUTE gr 1m
+ *
+ * Module 2 task 2
+ *
+ *
+                1. Create a child  from the class Rectangle.
+                2. Create another class as a super class for your one.  Or create a daughterly class for your one.
+ */
+
 package com.company;
+
+import java.util.Objects;
 
 public class Room extends Floor {
 
@@ -71,6 +93,25 @@ public class Room extends Floor {
                 ", height=" + height +
                 ", price=" + price +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Room room = (Room) o;
+        return getInterior() == room.getInterior() &&
+                getDesign() == room.getDesign() &&
+                getHeight() == room.getHeight() &&
+                getPrice() == room.getPrice();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(),
+                getInterior(), getDesign(),
+                getHeight(), getPrice());
     }
 }
 

@@ -20,6 +20,8 @@
 
 package com.company;
 
+import java.util.Objects;
+
 public class Floor extends Rectangle {
 
     private boolean laminat = true;                                     //
@@ -163,5 +165,24 @@ public class Floor extends Rectangle {
                 ", Ціна лінолеуму на м.кв  = " + priceLenoleumPerMeter2 +
                 ", Ціна паркету на м.кв = " + priceParketPerMeter2 +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Floor floor = (Floor) o;
+        return isLaminat() == floor.isLaminat() &&
+                isLenoleum() == floor.isLenoleum() &&
+                isParket() == floor.isParket() &&
+                Double.compare(floor.getPriceLaminatPerMeter2(), getPriceLaminatPerMeter2()) == 0 &&
+                Double.compare(floor.getPriceLenoleumPerMeter2(), getPriceLenoleumPerMeter2()) == 0 &&
+                Double.compare(floor.getPriceParketPerMeter2(), getPriceParketPerMeter2()) == 0 &&
+                Double.compare(floor.True4, True4) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(isLaminat(), isLenoleum(), isParket(), getPriceLaminatPerMeter2(), getPriceLenoleumPerMeter2(), getPriceParketPerMeter2(), True4);
     }
 }

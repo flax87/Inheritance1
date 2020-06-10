@@ -1,3 +1,23 @@
+/*
+ * Inheritance1
+ *
+ * Oleksii Shevchenko KNUTE m1
+ */
+
+/*
+ * Floor / Підлога
+ *
+ * 07.06.20
+ *
+ * Copyright Oleksii Shevchenko KNUTE gr 1m
+ *
+ * Module 2 task 2
+ *
+ *
+                1. Create a child  from the class Rectangle.
+                2. Create another class as a super class for your one.  Or create a daughterly class for your one.
+ */
+
 package com.company;
 
 public class Main {
